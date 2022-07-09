@@ -1,0 +1,26 @@
+.grid-img {
+  display: flex;
+  justify-content: center;
+}
+
+.img-detail {
+  max-width: 100%;
+}
+
+.titulo-item {
+  border-bottom: 1px solid #121212;
+}
+
+.info-detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-detail-button {
+  width: 100%;
+}
+
+.item-detail-link {
+  text-decoration: none;
+  color: #000000;
+}

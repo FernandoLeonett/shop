@@ -1,0 +1,14 @@
+.menu-categories {
+  opacity: 1;
+  transform: none;
+  transition: opacity 245ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 163ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  top: 105px;
+  left: 40px !important;
+  transform-origin: 0px 0px;
+}
+
+.menuItem-link {
+  color: white;
+  text-decoration: none;
+}

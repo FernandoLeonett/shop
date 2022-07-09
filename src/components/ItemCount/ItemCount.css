@@ -1,0 +1,14 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.count-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border-top: 1px solid #978b8b80;
+  border-bottom: 1px solid #978b8b80; */
+  margin: 1rem 0;
+}

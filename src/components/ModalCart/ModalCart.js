@@ -48,8 +48,8 @@ const ModalCart = ({ open, close, openModalAprove, setOrder }) => {
         close();
         openModalAprove();
       })
-      .catch((e) => console.log(e));
-    // .finally(() => setLoading(false));
+      .catch((e) => console.log(e))
+      .finally(() => setLoading(false));
   };
 
   useEffect(() => {

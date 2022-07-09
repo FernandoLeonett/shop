@@ -10,21 +10,23 @@ const Cart = () => {
   const [isOpenMoalCart, openMoalCart, close] = useModal(false);
   const [isOpenModalAprove, openModalAprove] = useModal(false);
   const [order, setOrder] = useState(0);
-  const { loader } = useContext(CartContext);
+  const { loading } = useContext(CartContext);
 
   return (
     <>
-      <TableCart openModal={openMoalCart} />
-      <ModalCart
-        open={isOpenMoalCart}
-        close={close}
-        openModalAprove={openModalAprove}
-        setOrder={setOrder}
-      />
-      {loader ? (
+      {loading ? (
         <Loader />
       ) : (
-        <ModalCompraAprobada open={isOpenModalAprove} order={order} />
+        <>
+          <TableCart openModal={openMoalCart} />
+          <ModalCart
+            open={isOpenMoalCart}
+            close={close}
+            openModalAprove={openModalAprove}
+            setOrder={setOrder}
+          />
+          <ModalCompraAprobada open={isOpenModalAprove} order={order} />
+        </>
       )}
     </>
   );

@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import validationForm from "../../validations/formvalidation";
-import Loader from "../Loader/Loader";
+
 import {
   Box,
   Button,
@@ -14,10 +14,12 @@ import {
 } from "@mui/material";
 import { saveData } from "../../firebase/services";
 import useCartList from "../../customHooks/useCartList";
+import { CartContext } from "../../context/CartContext";
 
 const ModalCart = ({ open, close, openModalAprove, setOrder }) => {
   console.log("openModalAprove", openModalAprove);
   const { cartListItems, totalPrice } = useCartList();
+  const { setLoading } = useContext(CartContext);
 
   const {
     register,
@@ -39,7 +41,7 @@ const ModalCart = ({ open, close, openModalAprove, setOrder }) => {
         quantity,
       })
     );
-
+    setLoading(true);
     saveData({ items, buyer: formData, totalPrice })
       .then((o) => {
         setOrder(o.id);
@@ -47,6 +49,7 @@ const ModalCart = ({ open, close, openModalAprove, setOrder }) => {
         openModalAprove();
       })
       .catch((e) => console.log(e));
+    // .finally(() => setLoading(false));
   };
 
   useEffect(() => {

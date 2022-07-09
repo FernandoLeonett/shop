@@ -61,18 +61,20 @@ const ItemDetail = ({ item }) => {
           </Box>
           {readyForPuchase ? (
             <Button
+              component={Link}
+              to={rutas.cart}
               variant="outlined"
               color="inherit"
               size="large"
               className="item-detail-button"
             >
-              <Link
-                to={rutas.cart}
+              {/* <Link
+              
                 // onClick={handlerPurchased}
                 className="item-detail-link"
-              >
-                Ir al Carrito
-              </Link>
+              > */}
+              Ir al Carrito
+              {/* </Link> */}
             </Button>
           ) : (
             <ItemCount count={count} setCount={setCount} item={item} />
